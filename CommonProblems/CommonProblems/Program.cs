@@ -13,23 +13,37 @@ namespace CommonProblems
 		public static void Main(string[] args)
 		{
 			EfficientPower ep = new EfficientPower();
-			Console.WriteLine("Enter x:");
-			double x = Double.Parse(Console.ReadLine());
-			Console.WriteLine("Enter power: ");
-			int toPower = Int32.Parse(Console.ReadLine());
 			Stopwatch timer = new Stopwatch();
-			timer.Start();
-			Console.WriteLine(string.Format("{0} to the power of {1}= {2}", x,toPower, ep.NormalPowerMethod(x,toPower)));
-			timer.Stop();
-			Console.WriteLine("Normal power time =" + timer.ElapsedTicks);
 			
-			//-------------- efficient
-			timer.Reset();
-			timer.Start();
-			Console.WriteLine(string.Format("Efficient power: {0} to the power of {1}= {2}", x, toPower, ep.EfficientPowerMethod(x, toPower)));
-			timer.Stop();
-			Console.WriteLine("Efficient power time =" + timer.ElapsedTicks);
+			int c = 0;
+			Int64 r = (Int64)Math.Pow(2, 24);
+			Random rand = new Random();
+			for (int i = 0; i < r; i++)
+			{
+				//Normal
+				timer.Reset();
+				int x = rand.Next();
+				int toPower = rand.Next();
+				timer.Start();
+				ep.NormalPowerMethod(x, toPower);
+				timer.Stop();
+				long normalPowerTime = timer.ElapsedTicks;
+				
 
+				//Efficient
+				timer.Start();
+				timer.Reset();
+				ep.EfficientPowerMethod(x, toPower);
+				timer.Stop();
+				long efficientPowerTime = timer.ElapsedTicks;
+
+				if (efficientPowerTime > normalPowerTime)
+				{
+					c++;
+				}
+			}
+			Console.WriteLine("Run test : " + r + " times");
+			Console.WriteLine("EfficientPower slower than NormalPower: " + c + " times");
 			Console.ReadLine();
 		}
 	}
