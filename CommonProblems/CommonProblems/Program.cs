@@ -16,7 +16,7 @@ namespace CommonProblems
 			Stopwatch timer = new Stopwatch();
 			
 			int c = 0;
-			Int64 r = (Int64)Math.Pow(2, 24);
+			Int64 r = (Int64)Math.Pow(2, 10);
 			Random rand = new Random();
 			for (int i = 0; i < r; i++)
 			{
@@ -42,8 +42,16 @@ namespace CommonProblems
 					c++;
 				}
 			}
+
+			Console.WriteLine(Math.Pow(-2, -1.2));
 			Console.WriteLine("Run test : " + r + " times");
 			Console.WriteLine("EfficientPower slower than NormalPower: " + c + " times");
+			Console.WriteLine("Probable reasons being: 1) Math.Pow() impl include several checkings - which incur overheads");
+			Console.WriteLine("MSDN: Math.Pow() - http://msdn.microsoft.com/en-us/library/system.math.pow(v=vs.110).aspx");
+			Console.WriteLine("MSDN: Math.Exp() - http://msdn.microsoft.com/en-us/library/system.math.exp.aspx");
+			Console.WriteLine("2) The Math.Pow() underlying impl uses a slow method compare to Math.Exp()");
+
+		
 			Console.ReadLine();
 		}
 	}
