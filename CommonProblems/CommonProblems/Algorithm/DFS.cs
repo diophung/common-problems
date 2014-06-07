@@ -27,7 +27,7 @@ namespace CommonProblems.Algorithm
 			foreach (var child in startNode.Children)
 			{
 				var r = RecursiveSearch(child, valueToSearch);
-				if (r.NodeValue == valueToSearch) 
+				if (r!=null && r.NodeValue == valueToSearch) 
 					return r;
 			}
 			return null;

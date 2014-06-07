@@ -99,7 +99,7 @@ namespace CommonProblems
 			var bfsAlgo = new BFS();
 			var dfsAlgo = new DFS();
 			var bfsNode = bfsAlgo.Search(t, 2);
-			var dfsNode = dfsAlgo.RecursiveSearch(t.Root, 2);
+			var dfsNode = dfsAlgo.RecursiveSearch(t.Root, 4);
 
 			if (bfsNode != null)
 				Console.WriteLine("BFS:{0} - name:{1} - value:{2}", bfsNode.Id, bfsNode.NodeName, bfsNode.NodeValue);
