@@ -12,12 +12,12 @@ namespace CommonProblems
 	{
 		public static void Main(string[] args)
 		{
-			EfficientPower ep = new EfficientPower();
-			Stopwatch timer = new Stopwatch();
+			var ep = new EfficientPower();
+			var timer = new Stopwatch();
 			
 			int c = 0;
-			Int64 r = (Int64)Math.Pow(2, 10);
-			Random rand = new Random();
+			var r = (Int64)Math.Pow(2, 10);
+			var rand = new Random();
 			for (int i = 0; i < r; i++)
 			{
 				//Normal

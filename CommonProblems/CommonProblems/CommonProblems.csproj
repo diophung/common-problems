@@ -42,6 +42,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Algorithm\DFS.cs" />
+    <Compile Include="DataStructure\BinaryTreeNode.cs" />
+    <Compile Include="DataStructure\Edge.cs" />
+    <Compile Include="DataStructure\TreeNode.cs" />
+    <Compile Include="DataStructure\Vertex.cs" />
+    <Compile Include="Graph\BinaryTree.cs" />
+    <Compile Include="Graph\Tree.cs" />
     <Compile Include="Maths\EfficientPower.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -51,8 +58,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Array\" />
-    <Folder Include="DataStructure\" />
-    <Folder Include="Graph\" />
     <Folder Include="Tree\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
