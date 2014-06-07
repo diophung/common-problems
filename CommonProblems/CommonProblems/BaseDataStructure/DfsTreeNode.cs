@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CommonProblems.DataStructure
+namespace CommonProblems.BaseDataStructure
 {
-	public class TreeNode:Vertex
+	public class DfsTreeNode:TreeNode
 	{
-		public IList<TreeNode> Children { get; set; }
+		public bool IsVisited { get; set; }
 	}
 }

@@ -7,12 +7,12 @@ using CommonProblems.BaseDataStructure;
 
 namespace CommonProblems.Graph
 {
-	public class Tree : Graph
+	public class Graph
 	{
-		public TreeNode Root { get; set; }
+		public string GraphName { get; set; }
 
-		
-		public int NodeCount { get; set; }
+		ICollection<Vertex> Vertices { get; set; }
 
+		ICollection<Edge> Edges { get; set; } 
 	}
 }

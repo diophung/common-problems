@@ -42,24 +42,27 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Algorithm\BFS.cs" />
     <Compile Include="Algorithm\DFS.cs" />
-    <Compile Include="DataStructure\BinaryTreeNode.cs" />
-    <Compile Include="DataStructure\Edge.cs" />
-    <Compile Include="DataStructure\TreeNode.cs" />
-    <Compile Include="DataStructure\Vertex.cs" />
+    <Compile Include="Array\LinkedList.cs" />
+    <Compile Include="BaseDataStructure\BinaryTreeNode.cs" />
+    <Compile Include="BaseDataStructure\DfsTreeNode.cs" />
+    <Compile Include="BaseDataStructure\Edge.cs" />
+    <Compile Include="BaseDataStructure\TreeNode.cs" />
+    <Compile Include="BaseDataStructure\Vertex.cs" />
     <Compile Include="Graph\BinaryTree.cs" />
+    <Compile Include="Graph\Graph.cs" />
     <Compile Include="Graph\Tree.cs" />
     <Compile Include="Maths\EfficientPower.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Array\" />
-    <Folder Include="Tree\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
