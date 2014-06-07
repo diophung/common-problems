@@ -107,7 +107,7 @@ namespace CommonProblems
 				Console.WriteLine("BFS: 8 not found");
 
 			if (dfsNode != null)
-				Console.WriteLine("DFS: {0} - name:{1} - value{2}", dfsNode.Id, dfsNode.NodeName, dfsNode.NodeValue);
+				Console.WriteLine("DFS:{0} - name:{1} - value:{2}", dfsNode.Id, dfsNode.NodeName, dfsNode.NodeValue);
 			else
 				Console.WriteLine("DFS: 2 not found");
 

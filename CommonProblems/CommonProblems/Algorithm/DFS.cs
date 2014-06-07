@@ -24,10 +24,11 @@ namespace CommonProblems.Algorithm
 				return null; //not found
 			}
 
-
 			foreach (var child in startNode.Children)
 			{
-				RecursiveSearch(child, valueToSearch);
+				var r = RecursiveSearch(child, valueToSearch);
+				if (r.NodeValue == valueToSearch) 
+					return r;
 			}
 			return null;
 		}
