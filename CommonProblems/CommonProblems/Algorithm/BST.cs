@@ -14,6 +14,7 @@ namespace CommonProblems.Algorithm
 		public BinaryTreeNode BinaryTreeSearchAlgo(BinaryTreeNode bt, double value)
 		{
 			BinaryTreeNode current = bt;
+
 			if (current != null && current.NodeValue == value) 
 				return current;
 
