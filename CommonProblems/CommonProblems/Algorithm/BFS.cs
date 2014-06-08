@@ -10,6 +10,33 @@ namespace CommonProblems.Algorithm
 {
 	public class BFS
 	{
+		public void RecursiveTraverse(Tree treeToTraverse, TreeNode startWithNode)
+		{
+			Queue<TreeNode> queue = new Queue<TreeNode>();
+			IList<TreeNode> visitedNodes = new List<TreeNode>();
+
+			TreeNode root = treeToTraverse.Root;
+			queue.Enqueue(root); //start checking root
+
+			while (queue.Count != 0)
+			{
+				var n = queue.Dequeue();
+				Console.WriteLine("{0}",n.Id);
+
+				foreach (var child in n.Children)
+				{
+					//if this node is not yet visited
+					if (!visitedNodes.Any(x => x.Equals(child)))
+					{
+						//BFS algo: mark children as visited
+						visitedNodes.Add(child);
+
+						//start scaning - BFS
+						queue.Enqueue(child);
+					}
+				}
+			}
+		}
 		public TreeNode Search(Tree searchInTree, double valueToSearch)
 		{
 			/*

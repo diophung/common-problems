@@ -111,7 +111,11 @@ namespace CommonProblems
 			else
 				Console.WriteLine("DFS: 2 not found");
 
+			Console.WriteLine("DFS traverse");
 			dfsAlgo.RecursiveTraverse(t, t.Root);
+
+			Console.WriteLine("BFS traverse");
+			bfsAlgo.RecursiveTraverse(t, t.Root);
 			Console.ReadLine();
 		}
 	}
