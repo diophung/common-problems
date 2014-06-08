@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Algorithm\BFS.cs" />
+    <Compile Include="Algorithm\BST.cs" />
     <Compile Include="Algorithm\DFS.cs" />
     <Compile Include="Array\LinkedList.cs" />
     <Compile Include="BaseDataStructure\BinaryTreeNode.cs" />

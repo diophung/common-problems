@@ -6,6 +6,16 @@ namespace CommonProblems.BaseDataStructure
 {
 	public class TreeNode : Vertex
 	{
+		protected bool Equals(TreeNode other)
+		{
+			return Equals(_children, other._children);
+		}
+
+		public override int GetHashCode()
+		{
+			return (_children != null ? _children.GetHashCode() : 0);
+		}
+
 		private IList<TreeNode> _children;
 		public IList<TreeNode> Children
 		{

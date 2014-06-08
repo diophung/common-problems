@@ -16,10 +16,18 @@ namespace CommonProblems
 	{
 		public static void Main(string[] args)
 		{
-			//EfficientPower();
-			DfsSearch();
+			EfficientPower();
+
+			TreeBasedAlgo();
+
+			BinarySearchTreeAlgo();
+
+			Console.ReadLine();
 		}
 
+		/// <summary>
+		/// Faster way to pow()
+		/// </summary>
 		public static void EfficientPower()
 		{
 			var ep = new EfficientPower();
@@ -61,11 +69,13 @@ namespace CommonProblems
 			Console.WriteLine("MSDN: Math.Exp() - http://msdn.microsoft.com/en-us/library/system.math.exp.aspx");
 			Console.WriteLine("2) The Math.Pow() underlying impl uses a slow method compare to Math.Exp()");
 
-
-			Console.ReadLine();
+			//Console.ReadLine();
 		}
 
-		public static void DfsSearch()
+		/// <summary>
+		/// DFS, BFS and traverse
+		/// </summary>
+		public static void TreeBasedAlgo()
 		{
 			Tree t = new Tree();
 			t.Root = new TreeNode { Id = 1, NodeName = "root", NodeValue = 1 };
@@ -116,7 +126,52 @@ namespace CommonProblems
 
 			Console.WriteLine("BFS traverse");
 			bfsAlgo.RecursiveTraverse(t, t.Root);
-			Console.ReadLine();
+
+			//Console.ReadLine();
+		}
+
+		public static void BinarySearchTreeAlgo()
+		{
+			BinaryTreeNode n0 = new BinaryTreeNode { Id = 0, NodeName = "0", NodeValue = 0 };
+			BinaryTreeNode n1 = new BinaryTreeNode { Id = 1, NodeName = "1", NodeValue = 1 };
+			BinaryTreeNode n2 = new BinaryTreeNode { Id = 2, NodeName = "2", NodeValue = 2 };
+			BinaryTreeNode n3 = new BinaryTreeNode { Id = 3, NodeName = "3", NodeValue = 3 };
+			BinaryTreeNode n4 = new BinaryTreeNode { Id = 4, NodeName = "4", NodeValue = 4 };
+			BinaryTreeNode n5 = new BinaryTreeNode { Id = 5, NodeName = "5", NodeValue = 5 };
+			BinaryTreeNode n6 = new BinaryTreeNode { Id = 6, NodeName = "6", NodeValue = 6 };
+
+			n1.LeftNode = n0;
+			n1.RightNode = n2;
+			n1.Children.Add(n0);
+			n1.Children.Add(n2);
+
+			n4.LeftNode = n3;
+			n4.RightNode = n5;
+			n4.Children.Add(n3);
+			n4.Children.Add(n5);
+
+			n5.RightNode = n6;
+			n5.Children.Add(n6);
+			
+			BinaryTreeNode root = new BinaryTreeNode { Id = 99, NodeName = "root", NodeValue = 3 };
+			root.LeftNode = n1;
+			root.RightNode = n4;
+			root.Children.Add(n1);
+			root.Children.Add(n4);
+			BinaryTree tree = new BinaryTree();
+			tree.BinaryRoot = root;
+
+			//Traverse 
+			DFS dfs = new DFS();
+			Console.WriteLine("Traversing BinaryTree");
+			dfs.RecursiveTraverse(tree, tree.BinaryRoot);
+			
+			//BST
+			BST bst = new BST(); 
+			var nodeFound = bst.BinaryTreeSearchAlgo(tree.BinaryRoot, 5);
+
+			if (nodeFound != null) Console.WriteLine("ID:{0} - value = {1}", nodeFound.Id, nodeFound.NodeValue);
+			else Console.WriteLine("Not found");
 		}
 	}
 }
