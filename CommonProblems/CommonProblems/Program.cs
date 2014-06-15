@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.Design.Serialization;
+using System.Management.Instrumentation;
 using CommonProblems.Algorithm;
 using CommonProblems.BaseDataStructure;
 using CommonProblems.Graph;
@@ -21,6 +22,8 @@ namespace CommonProblems
 			TreeBasedAlgo();
 
 			BinarySearchTreeAlgo();
+
+			SortAlgos();
 
 			Console.ReadLine();
 		}
@@ -152,7 +155,7 @@ namespace CommonProblems
 
 			n5.RightNode = n6;
 			n5.Children.Add(n6);
-			
+
 			BinaryTreeNode root = new BinaryTreeNode { Id = 99, NodeName = "root", NodeValue = 3 };
 			root.LeftNode = n1;
 			root.RightNode = n4;
@@ -165,13 +168,38 @@ namespace CommonProblems
 			DFS dfs = new DFS();
 			Console.WriteLine("Traversing BinaryTree");
 			dfs.RecursiveTraverse(tree, tree.BinaryRoot);
-			
+
 			//BST
-			BST bst = new BST(); 
+			BST bst = new BST();
 			var nodeFound = bst.BinaryTreeSearchAlgo(tree.BinaryRoot, 5);
 
 			if (nodeFound != null) Console.WriteLine("ID:{0} - value = {1}", nodeFound.Id, nodeFound.NodeValue);
 			else Console.WriteLine("Not found");
+		}
+
+		public static void SortAlgos()
+		{
+			Console.WriteLine("\nInsertionSort");
+			int[] A = { 3, 5, 6, 7, 2, 2, 4, 5, 6, 19, 34, 28, 43 };
+			SortAlgo sortAlgo = new SortAlgo();
+
+			A = new int[]{ 3, 5, 6, 7, 2, 2, 4, 5, 6, 19, 34, 28, 43 };
+			foreach (var i in sortAlgo.InsertionSort(A)) {
+				Console.Write("{0}\t", i);
+			}
+			Console.WriteLine("\nBubbleSort");
+			A = new int[] { 3, 5, 6, 7, 2, 2, 4, 5, 6, 19, 34, 28, 43 };
+			foreach (var i in sortAlgo.BubleSort(A)) {
+				Console.Write("{0}\t", i);
+			}
+
+			A = new int[] { 3, 5, 6, 7, 2, 2, 4, 5, 6, 19, 34, 28, 43 };
+			sortAlgo.QuickSort(A,0,A.Length-1);
+			Console.WriteLine("\nQuickSort");
+			foreach (var i in A)
+			{
+				Console.Write("{0}\t", i);
+			}
 		}
 	}
 }
