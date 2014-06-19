@@ -17,7 +17,7 @@ namespace CommonProblems
 	{
 		public static void Main(string[] args)
 		{
-			EfficientPower();
+			//EfficientPower();
 
 			TreeBasedAlgo();
 
@@ -36,17 +36,19 @@ namespace CommonProblems
 			var ep = new EfficientPower();
 			var timer = new Stopwatch();
 
-			int c = 0;
-			var r = (Int64)Math.Pow(2, 10);
+			int normalPowVsEffPow = 0;
+			int effPowVsMoreEffPow = 0;
+			int normalPowVsMoreEffLogNPow = 0;
+			var counter = (Int64)Math.Pow(2, 8);
 			var rand = new Random();
-			for (int i = 0; i < r; i++)
+			for (int i = 0; i < counter; i++)
 			{
 				//Normal
 				timer.Reset();
 				int x = rand.Next();
 				int toPower = rand.Next();
 				timer.Start();
-				ep.NormalPowerMethod(x, toPower);
+				var p1 = ep.NormalPowerMethod(x, toPower); //calculate using normal
 				timer.Stop();
 				long normalPowerTime = timer.ElapsedTicks;
 
@@ -54,19 +56,38 @@ namespace CommonProblems
 				//Efficient
 				timer.Start();
 				timer.Reset();
-				ep.EfficientPowerMethod(x, toPower);
+				var p2 = ep.EfficientPowerMethod(x, toPower); //calculate using logarit
 				timer.Stop();
 				long efficientPowerTime = timer.ElapsedTicks;
 
 				if (efficientPowerTime > normalPowerTime)
 				{
-					c++;
+					normalPowVsEffPow++;
+				}
+
+				timer.Reset();
+				timer.Start();
+				var p3 = ep.EfficientPowerWithLogN(x, toPower); //calculate using LogN
+				timer.Stop();
+				long moreEffPowTime = timer.ElapsedTicks;
+				if (moreEffPowTime > efficientPowerTime)
+				{
+					effPowVsMoreEffPow++;
+				}
+
+				if (normalPowerTime > moreEffPowTime)
+				{
+					normalPowVsMoreEffLogNPow++;
 				}
 			}
 
-			Console.WriteLine(Math.Pow(-2, -1.2));
-			Console.WriteLine("Run test : " + r + " times");
-			Console.WriteLine("EfficientPower slower than NormalPower: " + c + " times");
+			Console.WriteLine(ep.EfficientPowerWithLogN(2, 16));
+			Console.WriteLine(ep.NormalPowerMethod(2, 16.0));
+			Console.WriteLine(ep.EfficientPowerMethod(2, 16.0));
+			Console.WriteLine("Run test : " + counter + " times");
+			Console.WriteLine("EfficientPower slower than NormalPower: " + normalPowVsEffPow + " times");
+			Console.WriteLine("EfficientPowerLogN slower than EfficientPower: " + effPowVsMoreEffPow + " times");
+			Console.WriteLine("NormalPower slower than EfficientPowerLogN: " + normalPowVsMoreEffLogNPow + " times");
 			Console.WriteLine("Probable reasons being: 1) Math.Pow() impl include several checkings - which incur overheads");
 			Console.WriteLine("MSDN: Math.Pow() - http://msdn.microsoft.com/en-us/library/system.math.pow(v=vs.110).aspx");
 			Console.WriteLine("MSDN: Math.Exp() - http://msdn.microsoft.com/en-us/library/system.math.exp.aspx");
@@ -128,7 +149,7 @@ namespace CommonProblems
 			dfsAlgo.RecursiveTraverse(t, t.Root);
 
 			Console.WriteLine("BFS traverse");
-			bfsAlgo.RecursiveTraverse(t, t.Root);
+			bfsAlgo.NonRecursiveTraverse(t, t.Root);
 
 			//Console.ReadLine();
 		}
@@ -179,27 +200,26 @@ namespace CommonProblems
 
 		public static void SortAlgos()
 		{
+
+			int[] A = new int[] { 3, 5, 6, 7, 2, 2, 4, 5, 19, 24, 6, 19, 43, 28 };
+			
 			Console.WriteLine("\nInsertionSort");
-			int[] A = { 3, 5, 6, 7, 2, 2, 4, 5, 6, 19, 34, 28, 43 };
 			SortAlgo sortAlgo = new SortAlgo();
+			foreach (var i in sortAlgo.InsertionSort(A)) {Console.Write("{0}\t", i);}
 
-			A = new int[]{ 3, 5, 6, 7, 2, 2, 4, 5, 6, 19, 34, 28, 43 };
-			foreach (var i in sortAlgo.InsertionSort(A)) {
-				Console.Write("{0}\t", i);
-			}
 			Console.WriteLine("\nBubbleSort");
-			A = new int[] { 3, 5, 6, 7, 2, 2, 4, 5, 6, 19, 34, 28, 43 };
-			foreach (var i in sortAlgo.BubleSort(A)) {
-				Console.Write("{0}\t", i);
-			}
+			A = new int[] { 3, 5, 6, 7, 2, 2, 4, 5, 19, 24, 6, 19, 43, 28 };
+			foreach (var i in sortAlgo.BubleSort(A)) {Console.Write("{0}\t", i);}
 
-			A = new int[] { 3, 5, 6, 7, 2, 2, 4, 5, 6, 19, 34, 28, 43 };
+			A = new int[] { 3, 5, 6, 7, 2, 2, 4, 5, 19, 24, 6, 19, 43, 28 };
 			sortAlgo.QuickSort(A,0,A.Length-1);
 			Console.WriteLine("\nQuickSort");
-			foreach (var i in A)
-			{
-				Console.Write("{0}\t", i);
-			}
+			foreach (var i in A) Console.Write("{0}\t", i);
+
+			Console.WriteLine("\nMergeSort");
+			A = new int[] { 3, 5, 6, 7, 2, 2, 4, 5, 19, 24, 6, 19, 43, 28 };
+			sortAlgo.MergeSort_Recursive(A, 0, A.Length - 1);
+			foreach (var i in A) Console.Write("{0}\t", i);
 		}
 	}
 }

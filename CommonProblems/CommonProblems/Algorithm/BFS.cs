@@ -10,7 +10,7 @@ namespace CommonProblems.Algorithm
 {
 	public class BFS
 	{
-		public void RecursiveTraverse(Tree treeToTraverse, TreeNode startWithNode)
+		public void NonRecursiveTraverse(Tree treeToTraverse, TreeNode startWithNode)
 		{
 			Queue<TreeNode> queue = new Queue<TreeNode>();
 			IList<TreeNode> visitedNodes = new List<TreeNode>();

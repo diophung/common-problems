@@ -18,5 +18,18 @@ namespace CommonProblems.Maths
 		{
 			return Math.Exp(Math.Log(x) * toPower);
 		}
+
+		public double EfficientPowerWithLogN(double baseNum, int power)
+		{
+			if (baseNum == 0) return 0;
+			if (power == 0) return 1;
+			if (power < 0) return 1/(EfficientPowerWithLogN(baseNum, -power));
+			if (power % 2 == 0)
+			{
+				var halfPow = EfficientPowerWithLogN(baseNum, power/2);
+				return halfPow*halfPow;
+			}
+			return EfficientPowerWithLogN(baseNum, power/2) * EfficientPowerWithLogN(baseNum, power/2) * baseNum;
+		}
 	}
 }
