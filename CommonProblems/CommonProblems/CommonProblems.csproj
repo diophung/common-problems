@@ -32,6 +32,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Numerics" />
@@ -45,12 +46,14 @@
     <Compile Include="Algorithm\BFS.cs" />
     <Compile Include="Algorithm\BST.cs" />
     <Compile Include="Algorithm\Hashing.cs" />
+    <Compile Include="Algorithm\MergeIntervals.cs" />
     <Compile Include="Algorithm\SortAlgo.cs" />
     <Compile Include="Algorithm\DFS.cs" />
     <Compile Include="Array\LinkedList.cs" />
     <Compile Include="BaseDataStructure\BinaryTreeNode.cs" />
     <Compile Include="BaseDataStructure\DfsTreeNode.cs" />
     <Compile Include="BaseDataStructure\Edge.cs" />
+    <Compile Include="BaseDataStructure\Interval.cs" />
     <Compile Include="BaseDataStructure\TreeNode.cs" />
     <Compile Include="BaseDataStructure\Vertex.cs" />
     <Compile Include="Graph\BinaryTree.cs" />
@@ -58,14 +61,18 @@
     <Compile Include="Graph\Tree.cs" />
     <Compile Include="Maths\EfficientPower.cs" />
     <Compile Include="Program.cs" />
+    <Compile Include="Properties\Annotations.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tests\MergeIntervalTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">
       <SubType>Designer</SubType>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
