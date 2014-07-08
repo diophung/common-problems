@@ -13,10 +13,8 @@ namespace CommonProblems.Algorithm
 
 		public MergeIntervals()
 		{
-			MergedIntervals = new Stack<Interval>();
 			Intervals  = new List<Interval>();
 		}
-		public Stack<Interval> MergedIntervals { get; set; } 
 		public List<Interval> Intervals
 		{
 			get
@@ -34,8 +32,7 @@ namespace CommonProblems.Algorithm
 		{
 			Interval i = new Interval(start,end);
 			Intervals.Add(i);
-
-			Intervals = Sort(Intervals);
+			//Intervals = Sort(Intervals);
 		}
 
 		public int Compute()
@@ -56,16 +53,21 @@ namespace CommonProblems.Algorithm
 			itv = itv.OrderBy(x => x.Start).ToList();
 			return itv;
 		}
-		public List<Interval> Merge(List<Interval> currentSets)
+		public List<Interval> Merge(List<Interval> intervalsToMerge)
 		{
-			//Merge all itv, if overlapping
-			currentSets = Sort(currentSets);
+			//Sort all interval by its starting time (ascending order)
+			intervalsToMerge = Sort(intervalsToMerge);
 			Stack<Interval> stack = new Stack<Interval>();
-			if (currentSets != null && currentSets.Count > 0)
+			if (intervalsToMerge != null && intervalsToMerge.Count > 0)
 			{
-				stack.Push(currentSets.ElementAt(0));
-				foreach (var i in currentSets)
+				stack.Push(intervalsToMerge.ElementAt(0));
+				
+				//Algo: 
+				//for each interval, if it overlap with the stacktop --> update the stack top.
+				//else, push to stack
+				foreach (var i in intervalsToMerge)
 				{
+					//if NOT overlap --> keep it in stack
 					if (!IsOverlap(i, stack.Peek()))
 					{
 						stack.Push(i);

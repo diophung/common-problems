@@ -128,15 +128,15 @@ namespace CommonProblems.Algorithm
 			}
 		}
 
-		public void MergeSort_Recursive(int[] numbers, int left, int right)
+		public void MergeSort(int[] numbers, int left, int right)
 		{
 			int mid;
 
 			if (right > left)
 			{
 				mid = (right + left) / 2;
-				MergeSort_Recursive(numbers, left, mid);
-				MergeSort_Recursive(numbers, (mid + 1), right);
+				MergeSort(numbers, left, mid);
+				MergeSort(numbers, (mid + 1), right);
 
 				DoMerge(numbers, left, (mid + 1), right);
 			}

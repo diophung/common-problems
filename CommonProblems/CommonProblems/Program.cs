@@ -218,7 +218,7 @@ namespace CommonProblems
 
 			Console.WriteLine("\nMergeSort");
 			A = new int[] { 3, 5, 6, 7, 2, 2, 4, 5, 19, 24, 6, 19, 43, 28 };
-			sortAlgo.MergeSort_Recursive(A, 0, A.Length - 1);
+			sortAlgo.MergeSort(A, 0, A.Length - 1);
 			foreach (var i in A) Console.Write("{0}\t", i);
 		}
 	}
