@@ -34,5 +34,21 @@ namespace CommonProblems.Tests
 
 			
 		}
+
+		[TestMethod]
+		public void TestFibonacci()
+		{
+			//1,1,2,3,5,8,13,21,34,55
+			int f1 = Recursion.Fibonacci(1);
+			int f2 = Recursion.Fibonacci(2);
+			Assert.IsTrue(f1 == 1);
+			Assert.IsTrue(f2 == 1);
+
+			int f4 = Recursion.Fibonacci(4);
+			Assert.IsTrue(f4==3);
+			int f10 = Recursion.Fibonacci(10);
+			Assert.IsTrue(f10 == 55);
+
+		}
 	}
 }

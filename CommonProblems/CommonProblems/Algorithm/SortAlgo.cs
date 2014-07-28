@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CommonProblems.Algorithm
 {
-	class SortAlgo
+	public class SortAlgo
 	{
 		public int[] BubleSort(int[] A)
 		{

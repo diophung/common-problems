@@ -202,17 +202,17 @@ namespace CommonProblems
 		{
 
 			int[] A = new int[] { 3, 5, 6, 7, 2, 2, 4, 5, 19, 24, 6, 19, 43, 28 };
-			
+
 			Console.WriteLine("\nInsertionSort");
 			SortAlgo sortAlgo = new SortAlgo();
-			foreach (var i in sortAlgo.InsertionSort(A)) {Console.Write("{0}\t", i);}
+			foreach (var i in sortAlgo.InsertionSort(A)) { Console.Write("{0}\t", i); }
 
 			Console.WriteLine("\nBubbleSort");
 			A = new int[] { 3, 5, 6, 7, 2, 2, 4, 5, 19, 24, 6, 19, 43, 28 };
-			foreach (var i in sortAlgo.BubleSort(A)) {Console.Write("{0}\t", i);}
+			foreach (var i in sortAlgo.BubleSort(A)) { Console.Write("{0}\t", i); }
 
 			A = new int[] { 3, 5, 6, 7, 2, 2, 4, 5, 19, 24, 6, 19, 43, 28 };
-			sortAlgo.QuickSort(A,0,A.Length-1);
+			sortAlgo.QuickSort(A, 0, A.Length - 1);
 			Console.WriteLine("\nQuickSort");
 			foreach (var i in A) Console.Write("{0}\t", i);
 
