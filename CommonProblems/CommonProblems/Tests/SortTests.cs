@@ -11,7 +11,7 @@ namespace CommonProblems.Tests
 {
 
 	[TestClass]
-	public class TestSort
+	public class SortTests
 	{
 		private int[] _arr = new int[] { 3, 5, 6, 7, 2, 2, 19, 43, 28 };
 

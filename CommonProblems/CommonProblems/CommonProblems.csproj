@@ -62,15 +62,21 @@
     <Compile Include="Graph\Graph.cs" />
     <Compile Include="Graph\Tree.cs" />
     <Compile Include="Helper\ArrayExtension.cs" />
+    <Compile Include="LinkedList\LinkedList.cs" />
+    <Compile Include="LinkedList\LinkedListNode.cs" />
     <Compile Include="Maths\EfficientPower.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\Annotations.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Stack\StackAlgo.cs" />
+    <Compile Include="String\StringAlgo.cs" />
     <Compile Include="Tests\RecursionTest.cs" />
     <Compile Include="Tests\MergeIntervalTests.cs" />
     <Compile Include="Tests\OverloadingTest.cs" />
-    <Compile Include="Tests\TestSort.cs" />
-    <Compile Include="Tests\TestUniqueCharacterAlgo.cs" />
+    <Compile Include="Tests\StackTests.cs" />
+    <Compile Include="Tests\StringTests.cs" />
+    <Compile Include="Tests\SortTests.cs" />
+    <Compile Include="Tests\UniqueCharTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">

@@ -9,11 +9,11 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace CommonProblems.Tests
 {
 	[TestClass]
-	public class TestUniqueCharacterAlgo
+	public class UniqueCharTests
 	{
 		private UniqueCharacter _algo { get; set; }
 
-		public TestUniqueCharacterAlgo()
+		public UniqueCharTests()
 		{
 			_algo = new UniqueCharacter();
 		}
