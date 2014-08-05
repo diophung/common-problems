@@ -8,6 +8,9 @@ namespace CommonProblems.String
 {
 	public static class StringAlgo
 	{
+		
+		
+		
 		/// <summary>
 		/// Solving problem: remove all duplicate character in a string
 		/// </summary>
@@ -19,7 +22,7 @@ namespace CommonProblems.String
 			{
 				return string.Empty;
 			}
-
+			
 			//This algo is O(n^2) since the Contains take n comparison
 			var strArr = str.ToCharArray();
 			string cleaned = "";
@@ -30,8 +33,10 @@ namespace CommonProblems.String
 					cleaned += strArr[i];
 				}
 			}
-
+			
 			return cleaned;
 		}
+		
+		
 	}
 }

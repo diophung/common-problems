@@ -31,7 +31,20 @@ namespace CommonProblems.Tests
 			actual = "abc";
 			Assert.IsTrue(StringAlgo.RemoveDuplicateChar(actual).Equals(expected));
 
+		}
+		
+		[TestMethod]
+		public void TestCanBuildWord(){
+			char[] chars = {'a','b','c','d','h','a','t'};
+			string word = "hat";
 
+			StringAlgoNonStatic algo = new StringAlgoNonStatic(chars);
+			Assert.IsTrue(algo.CanBuildWord(word));
+			Assert.IsFalse(algo.CanBuildWord("hello"));
+			Assert.IsTrue(algo.CanBuildWord(string.Empty));
+
+			algo = new StringAlgoNonStatic(new char[]{});
+			Assert.IsFalse(algo.CanBuildWord("a"));
 		}
 	}
 }

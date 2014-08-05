@@ -70,6 +70,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Stack\StackAlgo.cs" />
     <Compile Include="String\StringAlgo.cs" />
+    <Compile Include="String\StringAlgoNonStatic.cs" />
     <Compile Include="Tests\RecursionTest.cs" />
     <Compile Include="Tests\MergeIntervalTests.cs" />
     <Compile Include="Tests\OverloadingTest.cs" />
