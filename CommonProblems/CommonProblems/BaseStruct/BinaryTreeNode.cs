@@ -1,6 +1,4 @@
-﻿using CommonProblems.Graph;
-
-namespace CommonProblems.BaseDataStructure
+﻿namespace CommonProblems.BaseStruct
 {
 	public class BinaryTreeNode:TreeNode
 	{

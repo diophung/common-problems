@@ -1,8 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using CommonProblems.Graph;
 
-namespace CommonProblems.BaseDataStructure
+namespace CommonProblems.BaseStruct
 {
 	public class TreeNode : Vertex
 	{

@@ -43,21 +43,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Algorithm\BacktrackRecursion.cs" />
     <Compile Include="Algorithm\BFS.cs" />
     <Compile Include="Algorithm\BST.cs" />
+    <Compile Include="Algorithm\DynamicProgramming\OptimizeSchedule.cs" />
+    <Compile Include="Algorithm\DynamicProgramming\SubSum.cs" />
     <Compile Include="Algorithm\Hashing.cs" />
     <Compile Include="Algorithm\MergeIntervals.cs" />
+    <Compile Include="Algorithm\Permutation.cs" />
     <Compile Include="Algorithm\Recursion.cs" />
     <Compile Include="Algorithm\SortAlgo.cs" />
     <Compile Include="Algorithm\DFS.cs" />
     <Compile Include="Algorithm\UniqueCharacter.cs" />
     <Compile Include="Array\LinkedList.cs" />
-    <Compile Include="BaseDataStructure\BinaryTreeNode.cs" />
-    <Compile Include="BaseDataStructure\DfsTreeNode.cs" />
-    <Compile Include="BaseDataStructure\Edge.cs" />
-    <Compile Include="BaseDataStructure\Interval.cs" />
-    <Compile Include="BaseDataStructure\TreeNode.cs" />
-    <Compile Include="BaseDataStructure\Vertex.cs" />
+    <Compile Include="BaseStruct\BinaryTreeNode.cs" />
+    <Compile Include="BaseStruct\DfsTreeNode.cs" />
+    <Compile Include="BaseStruct\Edge.cs" />
+    <Compile Include="BaseStruct\Interval.cs" />
+    <Compile Include="BaseStruct\TreeNode.cs" />
+    <Compile Include="BaseStruct\Vertex.cs" />
     <Compile Include="Graph\BinaryTree.cs" />
     <Compile Include="Graph\Graph.cs" />
     <Compile Include="Graph\Tree.cs" />
@@ -71,6 +75,8 @@
     <Compile Include="Stack\StackAlgo.cs" />
     <Compile Include="String\StringAlgo.cs" />
     <Compile Include="String\StringAlgoNonStatic.cs" />
+    <Compile Include="Tests\Algorithm\BacktrackRecursionTest.cs" />
+    <Compile Include="Tests\Algorithm\PermutationTest.cs" />
     <Compile Include="Tests\RecursionTest.cs" />
     <Compile Include="Tests\MergeIntervalTests.cs" />
     <Compile Include="Tests\OverloadingTest.cs" />

@@ -1,4 +1,4 @@
-﻿namespace CommonProblems.BaseDataStructure
+﻿namespace CommonProblems.BaseStruct
 {
 	public class Vertex
 	{

@@ -3,10 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using CommonProblems.BaseDataStructure;
+using CommonProblems.BaseStruct;
 
 namespace CommonProblems.Algorithm
 {
+	/// <summary>
+	/// Problem: given a list of intervals, find the total length which were covered by this list of intervals.
+	/// 
+	/// For e.g: { (1,3), (2,4), (8,10) } --> covered = (1,4) + (8,10) = 6.
+	/// </summary>
 	public class MergeIntervals
 	{
 		private List<Interval> _intervals;

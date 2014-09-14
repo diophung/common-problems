@@ -1,7 +1,8 @@
 ﻿using System.ComponentModel.Design.Serialization;
 using System.Management.Instrumentation;
 using CommonProblems.Algorithm;
-using CommonProblems.BaseDataStructure;
+using CommonProblems.Algorithm.DynamicProgramming;
+using CommonProblems.BaseStruct;
 using CommonProblems.Graph;
 using CommonProblems.Maths;
 using System;
@@ -17,15 +18,37 @@ namespace CommonProblems
 	{
 		public static void Main(string[] args)
 		{
-			//EfficientPower();
+			string response = "Y";
+			while (response.Equals("Y", StringComparison.InvariantCultureIgnoreCase))
+			{
+				
+				EfficientPower();
 
-			TreeBasedAlgo();
+				TreeBasedAlgo();
 
-			BinarySearchTreeAlgo();
+				BinarySearchTreeAlgo();
 
-			SortAlgos();
+				SortAlgos();
 
-			Console.ReadLine();
+				BacktrackRecursion backtrackRecursion = new BacktrackRecursion();
+				backtrackRecursion.QueensProblem();
+
+				GetSubSum();
+				
+				
+				Console.WriteLine("Rerun ? Y/N");
+				response = Console.ReadLine();
+			}
+		}
+
+		public static void GetSubSum()
+		{
+			SubSum subSum = new SubSum();
+			List<int> items = new List<int> {-2,2,-3,1,5,8,0};
+			List<int> itemsSoFar = new List<int>();
+			int target = 8;
+			Console.WriteLine("item pools : ["+ string.Join(",", items) + "]");
+			subSum.GetSubsetSum(items,target, itemsSoFar,1);
 		}
 
 		/// <summary>

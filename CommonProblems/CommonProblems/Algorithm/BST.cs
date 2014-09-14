@@ -4,7 +4,7 @@ using System.Diagnostics.Eventing.Reader;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using CommonProblems.BaseDataStructure;
+using CommonProblems.BaseStruct;
 using CommonProblems.Graph;
 
 namespace CommonProblems.Algorithm
