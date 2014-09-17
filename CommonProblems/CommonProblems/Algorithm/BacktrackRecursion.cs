@@ -13,24 +13,18 @@ namespace CommonProblems.Algorithm
 	{
 		const int MAX_QUEENS_NO = 8;
 
-
 		/// <summary>
 		/// Problem: how to put N queens on a NxN board, so that no queen attack each other.
 		/// </summary>
-		public void QueensProblem()
+		public void NqueensProblem()
 		{
+			//Note: this algo with only display the first solution it found
+			//To display all solution, consider looping all columns
 			ChessBoard board = new ChessBoard(MAX_QUEENS_NO);
-			int solution = 1;
-			for (int col = 0; col < board.BoardSize; col++)
+			if (Solve(board, 0))//start with first column
 			{
-				if (Solve(board, col))
-				{
-					Console.WriteLine("sol :#{0}", solution++);
-					DisplayBoard(board);
-					board.Reset();
-				}
+				DisplayBoard(board);
 			}
-			Console.WriteLine("Total :{0}", solution);
 		}
 
 
@@ -39,12 +33,12 @@ namespace CommonProblems.Algorithm
 		/// 
 		private bool Solve(ChessBoard board, int col)
 		{
-			if (col % board.BoardSize == 0 && col >= board.BoardSize)
+			if (col >= board.BoardSize)
 			{
 				return true; //reach base case
 			}
-			
-			//loop all possible rows
+
+			//try making choice with all columns
 			for (int rowToTry = 0; rowToTry < board.BoardSize; rowToTry++)
 			{
 				if (board.IsSafe(rowToTry, col))
@@ -54,10 +48,8 @@ namespace CommonProblems.Algorithm
 					{
 						return true;
 					}
-					else
-					{
-						board.RemoveQueen(rowToTry, col); //undo
-					}
+
+					board.RemoveQueen(rowToTry, col); //undo the choice
 				}
 			}
 			return false;
@@ -87,7 +79,7 @@ namespace CommonProblems.Algorithm
 	public class ChessBoard
 	{
 		private bool[][] board;
-		
+
 		public ChessBoard(int size)
 		{
 			BoardSize = size;

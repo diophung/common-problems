@@ -12,16 +12,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CommonProblems
-{
-	public class Program
-	{
-		public static void Main(string[] args)
-		{
+namespace CommonProblems {
+	public class Program {
+		public static void Main(string[] args) {
 			string response = "Y";
-			while (response.Equals("Y", StringComparison.InvariantCultureIgnoreCase))
-			{
-				
+			while (response.Equals("Y", StringComparison.InvariantCultureIgnoreCase)) {
+
 				EfficientPower();
 
 				TreeBasedAlgo();
@@ -30,32 +26,55 @@ namespace CommonProblems
 
 				SortAlgos();
 
-				BacktrackRecursion backtrackRecursion = new BacktrackRecursion();
-				backtrackRecursion.QueensProblem();
+				BacktrackQueensProblem();
 
 				GetSubSum();
-				
-				
+
+				SolveKnapSackProblem();
+
+				OptimizeSchedule();
+
 				Console.WriteLine("Rerun ? Y/N");
 				response = Console.ReadLine();
 			}
 		}
 
-		public static void GetSubSum()
-		{
+		private static void OptimizeSchedule() {
+			Scheduler scheduler = new Scheduler();
+			scheduler.intervals = scheduler.Init();
+			var choices = new List<Event>();
+			choices = scheduler.GreedyOptimize(scheduler.intervals, choices);
+
+			foreach (var i in choices) {
+				Console.WriteLine("{0}-{1}", i.Start, i.End);
+			}
+		}
+
+		private static void SolveKnapSackProblem() {
+			Knapsack kn = new Knapsack();
+			Random r = new Random();
+
+			kn.SolveKnapsack(r.Next(20), r.Next(1000));
+		}
+
+		private static void BacktrackQueensProblem() {
+			BacktrackRecursion backtrackRecursion = new BacktrackRecursion();
+			backtrackRecursion.QueensProblem();
+		}
+
+		public static void GetSubSum() {
 			SubSum subSum = new SubSum();
-			List<int> items = new List<int> {-2,2,-3,1,5,8,0};
+			List<int> items = new List<int> { -2, 2, -3, 1, 5, 8, 0 };
 			List<int> itemsSoFar = new List<int>();
 			int target = 8;
-			Console.WriteLine("item pools : ["+ string.Join(",", items) + "]");
-			subSum.GetSubsetSum(items,target, itemsSoFar,1);
+			Console.WriteLine("item pools : [" + string.Join(",", items) + "]");
+			subSum.GetSubsetSum(items, target, itemsSoFar);
 		}
 
 		/// <summary>
 		/// Faster way to pow()
 		/// </summary>
-		public static void EfficientPower()
-		{
+		public static void EfficientPower() {
 			var ep = new EfficientPower();
 			var timer = new Stopwatch();
 
@@ -64,8 +83,7 @@ namespace CommonProblems
 			int normalPowVsMoreEffLogNPow = 0;
 			var counter = (Int64)Math.Pow(2, 8);
 			var rand = new Random();
-			for (int i = 0; i < counter; i++)
-			{
+			for (int i = 0; i < counter; i++) {
 				//Normal
 				timer.Reset();
 				int x = rand.Next();
@@ -83,8 +101,7 @@ namespace CommonProblems
 				timer.Stop();
 				long efficientPowerTime = timer.ElapsedTicks;
 
-				if (efficientPowerTime > normalPowerTime)
-				{
+				if (efficientPowerTime > normalPowerTime) {
 					normalPowVsEffPow++;
 				}
 
@@ -93,13 +110,11 @@ namespace CommonProblems
 				var p3 = ep.EfficientPowerWithLogN(x, toPower); //calculate using LogN
 				timer.Stop();
 				long moreEffPowTime = timer.ElapsedTicks;
-				if (moreEffPowTime > efficientPowerTime)
-				{
+				if (moreEffPowTime > efficientPowerTime) {
 					effPowVsMoreEffPow++;
 				}
 
-				if (normalPowerTime > moreEffPowTime)
-				{
+				if (normalPowerTime > moreEffPowTime) {
 					normalPowVsMoreEffLogNPow++;
 				}
 			}
@@ -122,8 +137,7 @@ namespace CommonProblems
 		/// <summary>
 		/// DFS, BFS and traverse
 		/// </summary>
-		public static void TreeBasedAlgo()
-		{
+		public static void TreeBasedAlgo() {
 			Tree t = new Tree();
 			t.Root = new TreeNode { Id = 1, NodeName = "root", NodeValue = 1 };
 			TreeNode n2 = new TreeNode { Id = 2, NodeName = "2", NodeValue = 2 };
@@ -177,8 +191,7 @@ namespace CommonProblems
 			//Console.ReadLine();
 		}
 
-		public static void BinarySearchTreeAlgo()
-		{
+		public static void BinarySearchTreeAlgo() {
 			BinaryTreeNode n0 = new BinaryTreeNode { Id = 0, NodeName = "0", NodeValue = 0 };
 			BinaryTreeNode n1 = new BinaryTreeNode { Id = 1, NodeName = "1", NodeValue = 1 };
 			BinaryTreeNode n2 = new BinaryTreeNode { Id = 2, NodeName = "2", NodeValue = 2 };
@@ -221,8 +234,7 @@ namespace CommonProblems
 			else Console.WriteLine("Not found");
 		}
 
-		public static void SortAlgos()
-		{
+		public static void SortAlgos() {
 
 			int[] A = new int[] { 3, 5, 6, 7, 2, 2, 4, 5, 19, 24, 6, 19, 43, 28 };
 
