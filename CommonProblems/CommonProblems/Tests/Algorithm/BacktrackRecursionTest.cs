@@ -12,10 +12,10 @@ namespace CommonProblems.Tests.Algorithm
 	public class BacktrackRecursionTest
 	{
 		[TestMethod]
-		public void QueenProblemTest()
+		public void TestQueenProblem()
 		{
 			BacktrackRecursion backtrackRecursion = new BacktrackRecursion();
-			backtrackRecursion.QueensProblem();
+			backtrackRecursion.NqueensProblem();
 		}
 	}
 }

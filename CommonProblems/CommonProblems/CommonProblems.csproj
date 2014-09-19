@@ -47,6 +47,7 @@
     <Compile Include="Algorithm\BFS.cs" />
     <Compile Include="Algorithm\BST.cs" />
     <Compile Include="Algorithm\DynamicProgramming\Knapsack.cs" />
+    <Compile Include="Algorithm\DynamicProgramming\LongestCommonString.cs" />
     <Compile Include="Algorithm\DynamicProgramming\Scheduler.cs" />
     <Compile Include="Algorithm\DynamicProgramming\SubSum.cs" />
     <Compile Include="Algorithm\Hashing.cs" />
@@ -77,6 +78,7 @@
     <Compile Include="String\StringAlgo.cs" />
     <Compile Include="String\StringAlgoNonStatic.cs" />
     <Compile Include="Tests\Algorithm\BacktrackRecursionTest.cs" />
+    <Compile Include="Tests\Algorithm\LongestCommonStringTests.cs" />
     <Compile Include="Tests\Algorithm\SchedulerTest.cs" />
     <Compile Include="Tests\Algorithm\PermutationTest.cs" />
     <Compile Include="Tests\RecursionTest.cs" />
