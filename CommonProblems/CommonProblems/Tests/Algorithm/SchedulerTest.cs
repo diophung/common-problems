@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using CommonProblems.Algorithm.DynamicProgramming;
+using CommonProblems.Algorithm.Helper;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace CommonProblems.Tests.Algorithm
@@ -34,12 +35,12 @@ namespace CommonProblems.Tests.Algorithm
 			list.Add(i2);
 			list.Add(i3);
 
-			Assert.IsTrue(Scheduler.ContainsOverlapped(list));
+			Assert.IsTrue(list.ContainsOverlapped());
 
 			var list2 = new List<Event>();
 			list2.Add(i1);
 			list2.Add(i2);
-			Assert.IsFalse(Scheduler.ContainsOverlapped(list2));
+			Assert.IsFalse(list2.ContainsOverlapped());
 		}
 	}
 }

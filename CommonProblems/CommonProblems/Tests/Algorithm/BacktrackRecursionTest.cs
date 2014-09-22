@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using CommonProblems.Algorithm;
+﻿using CommonProblems.Algorithm;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace CommonProblems.Tests.Algorithm
@@ -15,7 +10,7 @@ namespace CommonProblems.Tests.Algorithm
 		public void TestQueenProblem()
 		{
 			BacktrackRecursion backtrackRecursion = new BacktrackRecursion();
-			backtrackRecursion.NqueensProblem();
+			backtrackRecursion.QueensProblem();
 		}
 	}
 }

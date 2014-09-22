@@ -11,6 +11,10 @@ namespace CommonProblems.Graph
 	{
 		public BinaryTreeNode BinaryRoot { get; set; }
 
+		public BinaryTreeNode LeftChild { get; set; }
+
+		public BinaryTreeNode RightChild { get; set; }
+
 		private IList<BinaryTreeNode> _children;
 
 		public IList<BinaryTreeNode> BinaryChildren

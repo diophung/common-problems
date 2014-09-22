@@ -44,10 +44,14 @@ namespace CommonProblems {
 			scheduler.intervals = scheduler.Init();
 			var choices = new List<Event>();
 			choices = scheduler.GreedyOptimize(scheduler.intervals, choices);
-
+			Console.WriteLine("\n Greedy optimize schedule:");
 			foreach (var i in choices) {
 				Console.WriteLine("{0}-{1}", i.Start, i.End);
 			}
+
+			Console.WriteLine("\n Dynamic Programming Schedule:");
+			scheduler.DisplayOptimizeScheduleViaDp(scheduler.intervals);
+
 		}
 
 		private static void SolveKnapSackProblem() {

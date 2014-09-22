@@ -11,24 +11,24 @@ namespace CommonProblems.Tests.Algorithm
 	[TestClass]
 	public class LongestCommonStringTests
 	{
-		LongestCommonString _lcs;
+		LongestCommonSequence _lcs;
 		public LongestCommonStringTests()
 		{
-			_lcs = new LongestCommonString();
+			_lcs = new LongestCommonSequence();
 		}
 		[TestMethod]
 		public void TestLcsOfEmptyString()
 		{
-			string shouldEmpty = _lcs.GetLongestCommonSubstring("", string.Empty);
+			string shouldEmpty = _lcs.GetLongestCommonSequence("", string.Empty);
 			Assert.IsTrue(string.IsNullOrEmpty(shouldEmpty));
 
-			string should = _lcs.GetLongestCommonSubstring("", "abc");
+			string should = _lcs.GetLongestCommonSequence("", "abc");
 			Assert.IsTrue(string.IsNullOrEmpty(should));
 
-			string should2 = _lcs.GetLongestCommonSubstring("abc123", "abc456abc1");
+			string should2 = _lcs.GetLongestCommonSequence("abc123", "abc456abc1");
 			Assert.IsTrue(should2.Length == 4);
 
-			string should3 = _lcs.GetLongestCommonSubstring("a1b2c3d4", "a1b1c1a2b2c2a3b3c3");
+			string should3 = _lcs.GetLongestCommonSequence("a1b2c3d4", "a1b1c1a2b2c2a3b3c3");
 			Assert.IsTrue(should3.Length == 6);
 		}
 	}
