@@ -1,16 +1,18 @@
 ﻿using System.ComponentModel.Design.Serialization;
 using System.Management.Instrumentation;
+using System.Text;
+using System.Xml.Linq;
 using CommonProblems.Algorithm;
+using CommonProblems.Algorithm.BitManipulation;
 using CommonProblems.Algorithm.DynamicProgramming;
-using CommonProblems.BaseStruct;
-using CommonProblems.Graph;
-using CommonProblems.Maths;
+using CommonProblems.Algorithm.GraphBased;
+using CommonProblems.Algorithm.Maths;
+using CommonProblems.Algorithm.Recursion;
+using CommonProblems.Algorithm.Sorting;
+using CommonProblems.DataStructure.Graphs;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CommonProblems {
 	public class Program {
@@ -34,11 +36,54 @@ namespace CommonProblems {
 
 				OptimizeSchedule();
 
+				TowerOfHanoiTest();
+
+				BitManipulateTest();
+
+				PrintSubSetOfSet();
 				Console.WriteLine("Rerun ? Y/N");
 				response = Console.ReadLine();
 			}
 		}
 
+		static void PrintSubSetOfSet()
+		{
+			List<string> data = new List<string>();
+			data.Add("A");
+			data.Add("B");
+			data.Add("C");
+
+			SetSubset set = new SetSubset();
+			var subsets = set.GetAllSubset(data, 0);
+			foreach (var s in subsets)
+			{
+				foreach (var str in s)
+				{
+					Console.Write("{0}, ",str);
+				}
+				Console.WriteLine("\n");
+			}
+		}
+		static void BitManipulateTest() {
+			BitManipulating bm = new BitManipulating();
+			for (int i = 1; i < 10; i++) {
+				bm.And(i, i - 1);
+			}
+		}
+		static void TowerOfHanoiTest() {
+			Tower src = new Tower("Source");
+			Tower dest = new Tower("Dest");
+			Tower temp = new Tower("Temp");
+
+			//src.Push(5);
+			//src.Push(4);
+			src.Push(3);
+			src.Push(2);
+			src.Push(1);
+
+			TowerOfHanoi tw = new TowerOfHanoi();
+			tw.MoveTower(src.Count, src, dest, temp);
+		}
 		private static void OptimizeSchedule() {
 			Scheduler scheduler = new Scheduler();
 			scheduler._events = scheduler.Init();
