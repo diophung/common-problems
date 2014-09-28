@@ -4,7 +4,7 @@
 	using System;
 	using System.Collections.Generic;
 	using System.Linq;
-	using CommonProblems.Algorithm.Helper;
+	using CommonProblems.Helper;
 
 namespace CommonProblems.Algorithm.DynamicProgramming {
 		public class Scheduler {

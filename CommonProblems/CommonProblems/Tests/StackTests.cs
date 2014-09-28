@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using CommonProblems.String;
+using CommonProblems.Algorithm;
+using CommonProblems.Algorithm.Sorting;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace CommonProblems.Tests

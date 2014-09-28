@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using CommonProblems.String;
+using CommonProblems.DataStructure.String;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace CommonProblems.Tests
@@ -38,12 +38,12 @@ namespace CommonProblems.Tests
 			char[] chars = {'a','b','c','d','h','a','t'};
 			string word = "hat";
 
-			StringAlgoNonStatic algo = new StringAlgoNonStatic(chars);
+			StringCanBuildWords algo = new StringCanBuildWords(chars);
 			Assert.IsTrue(algo.CanBuildWord(word));
 			Assert.IsFalse(algo.CanBuildWord("hello"));
 			Assert.IsTrue(algo.CanBuildWord(string.Empty));
 
-			algo = new StringAlgoNonStatic(new char[]{});
+			algo = new StringCanBuildWords(new char[]{});
 			Assert.IsFalse(algo.CanBuildWord("a"));
 		}
 	}

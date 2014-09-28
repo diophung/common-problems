@@ -1,52 +1,54 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 
-/// <summary>
-/// Detect whether a string contain only unique characters
-/// </summary>
-public class UniqueCharacter
+namespace CommonProblems.Algorithm
 {
-	//public const string Alphabet = "QWERTYUIOPASDFGHJKLZXCVBNMqwertyuiopasdfghjklzxcvbnm";
-
 	/// <summary>
-	/// Whether a string contains only unique characters
+	/// Detect whether a string contain only unique characters
 	/// </summary>
-	/// <param name="str"></param>
-	/// <returns></returns>
-	public bool IsUnique(string str)
+	public class UniqueCharacter
 	{
-		if (string.IsNullOrEmpty(str))
-		{
-			return false;
-		}
-		Hashtable charsMap = new Hashtable();
+		//public const string Alphabet = "QWERTYUIOPASDFGHJKLZXCVBNMqwertyuiopasdfghjklzxcvbnm";
 
-		//store the count of each character
-		for (int i = 0; i < str.Length; i++)
+		/// <summary>
+		/// Whether a string contains only unique characters
+		/// </summary>
+		/// <param name="str"></param>
+		/// <returns></returns>
+		public bool IsUnique(string str)
 		{
-			if (!charsMap.ContainsKey(str[i]))
-			{
-				charsMap.Add(str[i], 1);
-			}
-			else
-			{
-				//increase the count of this char
-				int currentCount = (int) charsMap[str[i]] ;
-				currentCount++;
-				charsMap[str[i]] = currentCount;
-			}
-		}
-
-		
-		for (int i = 0; i < str.Length; i++)
-		{
-			//duplicate char
-			if (charsMap.ContainsKey(str[i]) && (int) charsMap[str[i]] > 1)
+			if (string.IsNullOrEmpty(str))
 			{
 				return false;
 			}
-		}
+			Hashtable charsMap = new Hashtable();
 
-		return true;
+			//store the count of each character
+			for (int i = 0; i < str.Length; i++)
+			{
+				if (!charsMap.ContainsKey(str[i]))
+				{
+					charsMap.Add(str[i], 1);
+				}
+				else
+				{
+					//increase the count of this char
+					int currentCount = (int) charsMap[str[i]] ;
+					currentCount++;
+					charsMap[str[i]] = currentCount;
+				}
+			}
+
+		
+			for (int i = 0; i < str.Length; i++)
+			{
+				//duplicate char
+				if (charsMap.ContainsKey(str[i]) && (int) charsMap[str[i]] > 1)
+				{
+					return false;
+				}
+			}
+
+			return true;
+		}
 	}
 }
