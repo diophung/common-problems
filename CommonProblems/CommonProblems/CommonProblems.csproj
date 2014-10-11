@@ -44,6 +44,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Algorithm\BitManipulation\BitManipulating.cs" />
+    <Compile Include="Algorithm\GraphBased\DirectedAcylicGraph.cs" />
+    <Compile Include="Algorithm\Misc\DictionaryLookup.cs" />
+    <Compile Include="Algorithm\Misc\ParabolicArrayTransform.cs" />
     <Compile Include="Algorithm\Recursion\BacktrackRecursion.cs" />
     <Compile Include="Algorithm\GraphBased\BFS.cs" />
     <Compile Include="Algorithm\GraphBased\BST.cs" />
@@ -54,6 +57,10 @@
     <Compile Include="Algorithm\GraphBased\Dijkstra.cs" />
     <Compile Include="Algorithm\Hashing.cs" />
     <Compile Include="Algorithm\Recursion\SetSubset.cs" />
+    <Compile Include="Algorithm\Searching\QuickSelectAlgo.cs" />
+    <Compile Include="DataStructure\Graphs\BinarySearchTree.cs" />
+    <Compile Include="DataStructure\Graphs\BinarySearchTreeNode.cs" />
+    <Compile Include="DataStructure\Graphs\DirectedGraph.cs" />
     <Compile Include="Helper\ListExtension.cs" />
     <Compile Include="Algorithm\MergeIntervals.cs" />
     <Compile Include="Algorithm\Recursion\Permutation.cs" />
@@ -83,6 +90,8 @@
     <Compile Include="DataStructure\String\StringCanBuildWords.cs" />
     <Compile Include="Tests\BacktrackRecursionTest.cs" />
     <Compile Include="Tests\LongestCommonStringTests.cs" />
+    <Compile Include="Tests\ParabolicTransformTest.cs" />
+    <Compile Include="Tests\QuickSelectTest.cs" />
     <Compile Include="Tests\SchedulerTest.cs" />
     <Compile Include="Tests\PermutationTest.cs" />
     <Compile Include="Tests\RecursionTest.cs" />

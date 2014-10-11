@@ -55,7 +55,7 @@ namespace CommonProblems.Algorithm.GraphBased {
 
 			while (Q.Count > 0) {
 				Vertex u = getMinDistance(distance); //find the shortest
-				foreach (var v in u.Neighbours) {
+				foreach (var v in u.IncomingNeighbours) {
 					int alt = distance[u] + getLength(u, v, graph); //dist[u] + length(u, v)
 
 					//find all path available

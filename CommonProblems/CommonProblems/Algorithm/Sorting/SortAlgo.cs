@@ -73,7 +73,7 @@
 			int pivotValue = A[pivotIndex];
 			int storedIndex = left;
 
-			Swap(A, pivotIndex, right); //swap pivotIndex with right, avoid interfering with sorting
+			Swap(A, pivotIndex, right); //swap pivot to the end
 			for (int i = left; i <= right - 1; i++) 
 			{
 				if (A[i] <= pivotValue)
@@ -83,7 +83,7 @@
 				}
 			}
 
-			Swap(A, storedIndex, right); //move pivot to its final place.
+			Swap(A, storedIndex, right); //move pivot to its final place: pivot is now the sorted value
 			return storedIndex;
 		}
 		#endregion
@@ -139,6 +139,8 @@
 			}
 		}
 		#endregion
+
+
 	}
 
 }

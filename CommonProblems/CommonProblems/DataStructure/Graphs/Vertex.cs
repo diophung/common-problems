@@ -8,7 +8,9 @@ namespace CommonProblems.DataStructure.Graphs
 		public string NodeName { get; set; }
 		public double NodeValue { get; set; }
 
-		public IList<Vertex> Neighbours { get; set; } 
+		public IList<Vertex> IncomingNeighbours { get; set; }
+
+		public IList<Vertex> OutgoingNeighbours { get; set; } 
 		public override bool Equals(object obj)
 		{
 			var other = (Vertex)obj;
