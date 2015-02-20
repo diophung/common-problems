@@ -6,10 +6,10 @@ namespace CommonProblems.DataStructure.LinkedList
 	{
 		public LinkedList()
 		{
-			nodes = new List<DoubleLinkedList>();
+			Nodes = new List<DoubleLinkedList>();
 		}
 
 
-		public IList<DoubleLinkedList> nodes { get; set; }
+		public IList<DoubleLinkedList> Nodes { get; set; }
 	}
 }

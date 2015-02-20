@@ -11,7 +11,8 @@ namespace CommonProblems.Algorithm.DynamicProgramming {
 	/// </summary>
 	public class Knapsack {
 		/// <summary>
-		/// Problem: given a knapsack with weight capacity W, a list of items N, each item has a weight of w, a value of n.
+		/// Problem: given a knapsack with weight capacity W, <br></br>
+		/// a list of items N, each item has a weight of w, a value of n.<br></br>
 		/// Find a solution that fill the knapsack with items contains maximal value.
 		/// </summary>
 		/// <param name="maxN">maximum number of items</param>

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using CommonProblems.DataStructure.String;
+using CommonProblems.Algorithm.String;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace CommonProblems.Tests
@@ -14,7 +14,7 @@ namespace CommonProblems.Tests
 		[TestMethod]
 		public void TestEmptyString()
 		{
-			Assert.IsTrue(string.IsNullOrEmpty(StringAlgo.RemoveDuplicateChar(string.Empty)));
+			Assert.IsTrue(string.IsNullOrEmpty(StringRemoveDuplicateChar.RemoveDuplicateChar(string.Empty)));
 		}
 
 		[TestMethod]
@@ -23,13 +23,13 @@ namespace CommonProblems.Tests
 			string actual = "aabbc";
 			string expected = "abc";
 
-			Assert.IsTrue(StringAlgo.RemoveDuplicateChar(actual).Equals(expected));
+			Assert.IsTrue(StringRemoveDuplicateChar.RemoveDuplicateChar(actual).Equals(expected));
 
 			actual = "abcabcaa";
-			Assert.IsTrue(StringAlgo.RemoveDuplicateChar(actual).Equals(expected));
+			Assert.IsTrue(StringRemoveDuplicateChar.RemoveDuplicateChar(actual).Equals(expected));
 
 			actual = "abc";
-			Assert.IsTrue(StringAlgo.RemoveDuplicateChar(actual).Equals(expected));
+			Assert.IsTrue(StringRemoveDuplicateChar.RemoveDuplicateChar(actual).Equals(expected));
 
 		}
 		
