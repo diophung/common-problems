@@ -18,7 +18,7 @@ namespace CommonProblems.Algorithm.GraphBased
 			while (queue.Count != 0)
 			{
 				var n = queue.Dequeue();
-				Console.WriteLine("{0}",n.Id);
+				Console.WriteLine("{0}", n.Id);
 
 				foreach (var child in n.Children)
 				{
@@ -54,18 +54,13 @@ namespace CommonProblems.Algorithm.GraphBased
 			while (queue.Count != 0)
 			{
 				var n = queue.Dequeue();
-				if (n.NodeValue == valueToSearch) return n;
-
-
+				if (Math.Abs(n.NodeValue - valueToSearch) < TOLERANCE) return n;
 				foreach (var child in n.Children)
 				{
-					//if this node is not yet visited
 					if (!visitedNodes.Any(x => x.NodeValue == child.NodeValue))
 					{
-						//BFS algo: mark children as visited
 						visitedNodes.Add(child);
 
-						//start scaning - BFS
 						queue.Enqueue(child);
 					}
 				}
@@ -73,5 +68,7 @@ namespace CommonProblems.Algorithm.GraphBased
 
 			return null;//not found
 		}
+
+		const double TOLERANCE = 0.00000001;
 	}
 }

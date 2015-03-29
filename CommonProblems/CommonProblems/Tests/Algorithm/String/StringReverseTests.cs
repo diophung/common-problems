@@ -1,9 +1,9 @@
-﻿using CommonProblems.Algorithm.String;
+﻿using System;
+using CommonProblems.Algorithm.String;
 using CommonProblems.Helper;
 using NUnit.Framework;
-using System;
 
-namespace CommonProblems.Tests.AlgorithmTests.String
+namespace CommonProblems.Tests.Algorithm.String
 {
 	[TestFixture]
 	public class StringReverseTests

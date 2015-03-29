@@ -28,7 +28,6 @@ namespace CommonProblems.Algorithm.DynamicProgramming {
 			int[] profit = new int[maxN + 1];
 			int[] weight = new int[maxN + 1];
 			Random r = new Random();
-			// generate random instance, items 1..N
 			for (int n = 1; n <= maxN; n++) {
 				profit[n] = r.Next(1000);
 				weight[n] = r.Next(0, 2 * maxW);

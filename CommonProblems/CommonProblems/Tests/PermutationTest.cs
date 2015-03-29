@@ -17,18 +17,18 @@ namespace CommonProblems.Tests.Algorithm
 		{
 			Permutation permutation = new Permutation();
 
-			var res = permutation.StringPermute("abc");
+			var res = permutation.GetDistinctPermutation("abc");
 			Assert.IsTrue(res.Equals("abc|acb|bac|bca|cab|cba"));
 			Console.WriteLine("*************");
-			var res2 = permutation.StringPermute("aab");
+			var res2 = permutation.GetDistinctPermutation("aab");
 			Assert.IsTrue(res2.Equals("aab|aba|baa"));
 			Console.WriteLine("*************");
-			var res3 = permutation.StringPermute("aaa");
+			var res3 = permutation.GetDistinctPermutation("aaa");
 			Assert.IsTrue(res3.Equals("aaa"));
 
-			Assert.IsTrue(permutation.StringPermute("a").Equals("a"));
-			Assert.IsTrue(string.IsNullOrEmpty(permutation.StringPermute("")));
-			Assert.IsTrue(string.IsNullOrEmpty(permutation.StringPermute(null)));
+			Assert.IsTrue(permutation.GetDistinctPermutation("a").Equals("a"));
+			Assert.IsTrue(string.IsNullOrEmpty(permutation.GetDistinctPermutation("")));
+			Assert.IsTrue(string.IsNullOrEmpty(permutation.GetDistinctPermutation(null)));
 		}
 	}
 }

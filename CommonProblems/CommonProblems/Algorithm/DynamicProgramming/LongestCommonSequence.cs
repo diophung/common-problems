@@ -9,21 +9,21 @@ namespace CommonProblems.Algorithm.DynamicProgramming
 {
 	public class LongestCommonSequence
 	{
-		int[,] _seq;
+		int[,] seq;
 
 		/// <summary>
 		/// Determine the longest similarity of 2 strings (if delete certain characters out of both)
 		/// </summary>
-		/// <param name="first"></param>
-		/// <param name="second"></param>
+		/// <param name="firstSeq"></param>
+		/// <param name="secondSeq"></param>
 		/// <returns></returns>
-		public string GetLongestCommonSequence(string first, string second)
+		public string GetLongestCommonSequence(string firstSeq, string secondSeq)
 		{
-			first = first ?? "";
-			second = second ?? "";
-			int firstSize = string.IsNullOrEmpty(first) ? 0 : first.Length;
-			int secondSize = string.IsNullOrEmpty(second) ? 0 : second.Length;
-			_seq = new int[firstSize + 1, secondSize + 1];
+			firstSeq = firstSeq ?? "";
+			secondSeq = secondSeq ?? "";
+			int firstSize = string.IsNullOrEmpty(firstSeq) ? 0 : firstSeq.Length;
+			int secondSize = string.IsNullOrEmpty(secondSeq) ? 0 : secondSeq.Length;
+			seq = new int[firstSize + 1, secondSize + 1];
 
 			//bottom-up approach to populate the common sequence
 			//start from bottom-up, with right-to-left scannning
@@ -31,15 +31,15 @@ namespace CommonProblems.Algorithm.DynamicProgramming
 			{
 				for (int j = secondSize - 1; j >= 0; j--)
 				{
-					if (first.ElementAt(i) == second.ElementAt(j))
+					if (firstSeq.ElementAt(i) == secondSeq.ElementAt(j))
 					{
 						//if sharing the same common character at this place
-						_seq[i, j] = _seq[i + 1, j + 1] + 1; 
+						seq[i, j] = seq[i + 1, j + 1] + 1;
 					}
 					else
 					{
 						//if not, choose the longest subsequence
-						_seq[i, j] = Math.Max(_seq[i + 1, j], _seq[i, j + 1]); 
+						seq[i, j] = Math.Max(seq[i + 1, j], seq[i, j + 1]);
 					}
 				}
 			}
@@ -50,17 +50,17 @@ namespace CommonProblems.Algorithm.DynamicProgramming
 			//get the longest sequence
 			while (f < firstSize && s < secondSize)
 			{
-				if (first.ElementAt(f) == second.ElementAt(s))
+				if (firstSeq.ElementAt(f) == secondSeq.ElementAt(s))
 				{
-					lcs.Append(first.ElementAt(f));
-					f++; 
+					lcs.Append(firstSeq.ElementAt(f));
+					f++;
 					s++;
 				}
-				else if (_seq[f + 1, s] >= _seq[f, s + 1])
+				else if (seq[f + 1, s] >= seq[f, s + 1])
 					f++;
 				else
-					s++;	
-				
+					s++;
+
 			}
 			return lcs.ToString();
 		}

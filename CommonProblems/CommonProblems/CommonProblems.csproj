@@ -109,9 +109,10 @@
     <Compile Include="Algorithm\Sorting\StackAlgo.cs" />
     <Compile Include="Algorithm\String\StringRemoveDuplicateChar.cs" />
     <Compile Include="Algorithm\String\StringCanBuildWords.cs" />
-    <Compile Include="Tests\AlgorithmTests\String\StringReverseTests.cs" />
+    <Compile Include="Tests\Algorithm\Recursion\PermutationTests.cs" />
+    <Compile Include="Tests\Algorithm\String\StringReverseTests.cs" />
     <Compile Include="Tests\BacktrackRecursionTest.cs" />
-    <Compile Include="Tests\HelperTests\StringExtensionTests.cs" />
+    <Compile Include="Tests\Helper\StringExtensionTests.cs" />
     <Compile Include="Tests\LongestCommonStringTests.cs" />
     <Compile Include="Tests\ParabolicTransformTest.cs" />
     <Compile Include="Tests\QuickSelectTest.cs" />
@@ -135,7 +136,7 @@
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Tests\DataStructureTests\" />
+    <Folder Include="Tests\DataStructure\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

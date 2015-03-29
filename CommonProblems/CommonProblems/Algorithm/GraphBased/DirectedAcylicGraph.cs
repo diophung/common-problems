@@ -11,7 +11,7 @@ namespace CommonProblems.Algorithm.GraphBased {
 		//problem:	given information about runner in a racing, info about who beats whom
 		//			build the order of finish.
 
-		public IList<Vertex> BuildFinishOrder(DirectedGraph graph) {
+		public IList<Vertex> CarRaceOrder(DirectedGraph graph) {
 			/* To build a topological order of a DAG:
 			
 			L ← Empty list that will contain the sorted elements

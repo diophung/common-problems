@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 
@@ -7,68 +8,79 @@ namespace CommonProblems.Algorithm
 {
 	public class Permutation
 	{
-		/// <summary>
 		/// return all possible permuations of a string (without duplicated output), seperated by pipe "|"
-		/// </summary>
-		/// <param name="original"></param>
-		public string StringPermute(string original)
+		public string GetDistinctPermutation(string word)
 		{
-			try
-			{
-				IDictionary<string, bool> dict = new Dictionary<string, bool>();
-				StringBuilder allResults = new StringBuilder();
-				if (string.IsNullOrEmpty(original))
-				{
-					Console.WriteLine(original);
-					return "";
-				}
+			IDictionary<string, bool> dict = new Dictionary<string, bool>();
+			StringBuilder output = new StringBuilder();
+			if (string.IsNullOrEmpty(word)) 
+				return "";
 
-				if (original.Length == 1)
-				{
-					Console.WriteLine(original);
-					return original;
-				}
-
-				if (original.Length > 1)
-				{
-					Permute(string.Empty, original, dict, allResults);
-				}
-
-				return allResults.ToString().Substring(0, allResults.Length - 1);
+			if (word.Length >= 1) {
+				PermuteDistinct(string.Empty, word, dict, output);
 			}
-			catch (Exception)
-			{
-				throw;
-			}
+
+			return output.ToString().Substring(0, output.Length - 1); //strip off last "|"
 		}
 
 		/// Algo
 		///		If there is no character left to print, stop
 		///		Else :
-		///			find a character and add it to the string soFar
+		///			find a character and add it to the string builtWord
 		///			use permuatation to find the output from the rest
-		private void Permute(string soFar, string remaining, IDictionary<string, bool> dict, StringBuilder allResults)
+		///  Complexity: O(n!) since there are n! way to permute
+		private void PermuteDistinct(string builtWord, string word, IDictionary<string, bool> addedWords, StringBuilder output)
 		{
-			//soFar: the string created by permuation
-			//remaining: the rest of the group
-			//dict: the dictionary used to check for duplication
-			if (string.IsNullOrEmpty(remaining))
+			if (string.IsNullOrEmpty(word))
 			{
-				//avoid output duplication
-				if (!dict.ContainsKey(soFar))
+				if (!addedWords.ContainsKey(builtWord)) //uniqueness
 				{
-					dict[soFar] = true;
-					allResults.Append(soFar + "|");
-					Console.WriteLine(soFar);
+					addedWords[builtWord] = true;
+					output.Append(builtWord + "|");
 				}
 			}
-			for (int i = 0; i < remaining.Length; i++)
-			{
-				//permute
-				string temp = remaining.Substring(0, i) + remaining.Substring(i + 1);
 
-				Permute(soFar + remaining.ElementAt(i), temp, dict, allResults);
+			if (!string.IsNullOrEmpty(word))
+			{
+				for (int i = 0; i < word.Length; i++)
+				{
+					string subword = word.Substring(0, i) + word.Substring(i + 1); //extract the character at i
+					PermuteDistinct(builtWord + word.ElementAt(i), subword, addedWords, output);
+				}
 			}
+		}
+
+
+		public static List<string> Permute(string s)
+		{
+			List<string> permutations = new List<string>();
+
+			if (s == null) return null;
+			if (s.Length == 0)
+			{
+				permutations.Add("");
+				return permutations;
+			}
+
+			Char first = s.ElementAt(0);
+			string remainder = s.Substring(1);
+			List<string> words = Permute(remainder);
+
+			foreach (string w in words)
+			{
+				for (int i = 0; i <= w.Length; i++)
+				{
+					permutations.Add(insertCharAt(w, first, i));
+				}
+			}
+			return permutations;
+		}
+
+		static string insertCharAt(string word, char ch, int index)
+		{
+			string start = word.Substring(0, index);
+			string end = word.Substring(index);
+			return start + ch + end;
 		}
 	}
 }

@@ -1,8 +1,7 @@
 ﻿using CommonProblems.Helper;
-using NUnit.Core;
 using NUnit.Framework;
 
-namespace CommonProblems.Tests.HelperTests
+namespace CommonProblems.Tests.Helper
 {
 	[TestFixture]
 	public class StringExtensionTests
