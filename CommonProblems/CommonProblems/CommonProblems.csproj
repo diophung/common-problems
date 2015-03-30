@@ -84,6 +84,7 @@
     <Compile Include="DataStructure\Graphs\BinarySearchTree.cs" />
     <Compile Include="DataStructure\Graphs\BinarySearchTreeNode.cs" />
     <Compile Include="DataStructure\Graphs\DirectedGraph.cs" />
+    <Compile Include="DataStructure\Intervals\CheckOverlappingIntervals.cs" />
     <Compile Include="Helper\ListExtension.cs" />
     <Compile Include="Algorithm\MergeIntervals.cs" />
     <Compile Include="Algorithm\Recursion\Permutation.cs" />
@@ -115,6 +116,7 @@
     <Compile Include="Tests\Algorithm\Recursion\PermutationTests.cs" />
     <Compile Include="Tests\Algorithm\String\StringReverseTests.cs" />
     <Compile Include="Tests\BacktrackRecursionTest.cs" />
+    <Compile Include="Tests\DataStructure\IntervalTest\IntervalTests.cs" />
     <Compile Include="Tests\DataStructure\String\GetNearByWordsTests.cs" />
     <Compile Include="Tests\Helper\StringExtensionTests.cs" />
     <Compile Include="Tests\LongestCommonStringTests.cs" />
