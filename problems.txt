@@ -2,4 +2,5 @@ Problems
 
 1.  http://www.glassdoor.com/Interview/The-interview-problems-were-fairly-straightforward-One-was-given-2-Nodes-in-a-binary-tree-find-the-closest-ancestor-and-t-QTN_598547.htm
 
-One was given 2 Nodes in a binary tree, find the closest ancestor and the other one was given a 2D array of people who follow one another, determine who's an influencer(followed by everyone, follows no one). Example: If A[i][j] is true, then person i follows person j. 
+One was given 2 Nodes in a binary tree, find the closest ancestor and the other one was given a 2D array of people who follow one another, 
+determine who's an influencer(followed by everyone, follows no one). Example: If A[i][j] is true, then person i follows person j. 

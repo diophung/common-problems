@@ -7,51 +7,54 @@ using System.Threading.Tasks;
 
 namespace CommonProblems.Algorithm.DynamicProgramming
 {
-	public class SubSum
-	{
-		///problems: given a set of integer [itemsPool] and a targetSum, find all subset of itemsPool that adds up to targetSum.
-		///algo: 
-		///		GetSubSetSum (itemsPool, target, itemsSoFar)
-		///			if sum(itemsSoFar) == target //we found it;
-		///				print(itemsSoFar) & stop;
-		///			
-		///			if sum(itemSoFar) > target //exceed it
-		///				stop, return;
-		/// 
-		///			for each item in itemsPool
-		///				partial = itemSoFar + item;
-		///				remaining = the tail of itemsPool; //(excluding [partial])
-		///				GetSubSetSum(remaining, target, partial);
-		///
-		/// Analysis:	
-		///				time complexity : exponential since it will try all subset of the itemsPool
-		///				space complexity: exponential : in each loop: create a new List, the list contains all items (remaining + partial = itemsPool)
-		public void GetSubsetSum(List<int> itemsPool, int targetSum, List<int> itemsSoFar)
-		{
-			int sumSoFar = itemsSoFar.Sum();
+    public class SubSum
+    {
+        ///problems: given a set of integer [itemsPool] and a targetSum, find all subset of itemsPool that adds up to targetSum.
+        ///algo: 
+        ///		GetSubSetSum (itemsPool, target, itemsSoFar)
+        ///			if sum(itemsSoFar) == target //we found it;
+        ///				print(itemsSoFar) & stop;
+        ///			
+        ///			if sum(itemSoFar) > target //exceed it
+        ///				stop, return;
+        /// 
+        ///			for each item in itemsPool
+        ///				partial = itemSoFar + item;
+        ///				remaining = the tail of itemsPool; //(excluding [partial])
+        ///				GetSubSetSum(remaining, target, partial);
+        ///
+        /// Analysis:	
+        ///				time complexity : exponential since it will try all subset of the itemsPool
+        ///				space complexity: exponential : in each loop: create a new List, the list contains all items (remaining + partial = itemsPool)
+        public void GetSubsetSum(List<int> items, int target, List<int> itemsSoFar)
+        {
+            int s = itemsSoFar.Sum();
 
-			if (sumSoFar == targetSum) //found it subset
-			{
-				Console.WriteLine("sum of [" + string.Join(",", itemsSoFar) + "] = " + targetSum);
-				return;
-			}
+            if (s == target){
+                Console.WriteLine("sum of [" + string.Join(",", itemsSoFar) + "] = " + target);
+                return;
+            }
 
-			if (sumSoFar > targetSum)
-				return; //no more
+            if (s > target)
+                return;
 
-			for (int i = 0; i < itemsPool.Count; i++)
-			{
-				List<int> remaining = new List<int>();
-				for (int j = i + 1; j < itemsPool.Count; j++)
-				{
-					remaining.Add(itemsPool.ElementAt(j));
-				}
+            for (int i = 0; i < items.Count; i++){
+                List<int> choices = new List<int>(itemsSoFar);
+                choices.Add(items.ElementAt(i));
 
-				var partial = new List<int>();
-				partial.AddRange(itemsSoFar);
-				partial.Add(itemsPool.ElementAt(i));
-				GetSubsetSum(remaining, targetSum, partial);
-			}
-		}
-	}
+                List<int> remainders = Sublist(items, i+1);
+
+                GetSubsetSum(remainders, target, choices);
+            }
+        }
+
+        ///Get sublist start from the index
+        List<int> Sublist(List<int> lst, int index){
+            List<int> sub = new List<int>();
+            for (int i = index; i < lst.Count; i++){
+                sub.Add(i);
+            }
+            return sub;
+        }
+    }
 }

@@ -29,14 +29,14 @@ namespace CommonProblems.Algorithm
 		///			find a character and add it to the string builtWord
 		///			use permuatation to find the output from the rest
 		///  Complexity: O(n!) since there are n! way to permute
-		private void PermuteDistinct(string builtWord, string word, IDictionary<string, bool> addedWords, StringBuilder output)
+		private void PermuteDistinct(string created, string word, IDictionary<string, bool> addedWords, StringBuilder output)
 		{
 			if (string.IsNullOrEmpty(word))
 			{
-				if (!addedWords.ContainsKey(builtWord)) //uniqueness
+				if (!addedWords.ContainsKey(created)) //uniqueness
 				{
-					addedWords[builtWord] = true;
-					output.Append(builtWord + "|");
+					addedWords[created] = true;
+					output.Append(created + "|");
 				}
 			}
 
@@ -45,7 +45,7 @@ namespace CommonProblems.Algorithm
 				for (int i = 0; i < word.Length; i++)
 				{
 					string subword = word.Substring(0, i) + word.Substring(i + 1); //extract the character at i
-					PermuteDistinct(builtWord + word.ElementAt(i), subword, addedWords, output);
+					PermuteDistinct(created + word.ElementAt(i), subword, addedWords, output);
 				}
 			}
 		}

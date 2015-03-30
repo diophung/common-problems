@@ -11,6 +11,8 @@
     <AssemblyName>CommonProblems</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -77,6 +79,7 @@
     <Compile Include="Algorithm\Hashing.cs" />
     <Compile Include="Algorithm\Recursion\SetSubset.cs" />
     <Compile Include="Algorithm\Searching\QuickSelectAlgo.cs" />
+    <Compile Include="Algorithm\String\GetNearByWords.cs" />
     <Compile Include="Algorithm\String\StringReverse.cs" />
     <Compile Include="DataStructure\Graphs\BinarySearchTree.cs" />
     <Compile Include="DataStructure\Graphs\BinarySearchTreeNode.cs" />
@@ -112,6 +115,7 @@
     <Compile Include="Tests\Algorithm\Recursion\PermutationTests.cs" />
     <Compile Include="Tests\Algorithm\String\StringReverseTests.cs" />
     <Compile Include="Tests\BacktrackRecursionTest.cs" />
+    <Compile Include="Tests\DataStructure\String\GetNearByWordsTests.cs" />
     <Compile Include="Tests\Helper\StringExtensionTests.cs" />
     <Compile Include="Tests\LongestCommonStringTests.cs" />
     <Compile Include="Tests\ParabolicTransformTest.cs" />
@@ -135,10 +139,9 @@
   <ItemGroup>
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Tests\DataStructure\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

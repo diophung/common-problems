@@ -22,7 +22,8 @@ namespace CommonProblems.Algorithm.Recursion {
 				var item = set[index]; //first items
 
 				var crossJoinSets = new List<List<string>>();
-				//cross join with this subset
+				
+                
 				foreach (var subset in allSubsets) {
 					var crossjoinSet = new List<string>();
 					crossjoinSet.Add(item);

@@ -1,20 +1,22 @@
 Common Programming Problems
 ===============
-A collection of programming problems involve data structures, common algorithms, and system designs.
+A collection of programming topics and problems for your technical preparations.
 
-#I. Data structure
+#I. Data structures
 ##1. String, Array, List, LinkedList 
 	a. String
 	b. Array
 	c. List, LinkedList (for collection and grouping problems).
 
 ##2. Tree, Graph
-	For hiearchy structures and relationship/traversal. 
-
+	Hierarchical structures for relationship/traversal problems. 
 
 ##3. Stack, Queue
-	Basic data structures that support ordered/non-ordered addition/removal.
+	Support ordered/non-ordered addition/removal.
 
+##4. HashTable / Dictionary / HashMap
+	Quicker access to items based on indexes.
+	
 #II. Algorithm
 ##1. Sort, Search
 	a. QuickSort, MergeSort
@@ -27,9 +29,20 @@ A collection of programming problems involve data structures, common algorithms,
 	b. Backtracking
 	c. Recursion with Dynamic programming
 
+##3. Bitwise operation
+	
+
 #III. System design
 ##1. Distributed system
 	a. Proper problem definition
 	b. How to split & scale-up
 	c. How to divide-and-conquer, how to MapReduce ?
 	d. BigData
+
+#IV. Testing
+	a. Edge cases
+
+
+#V. Performance, complexity, Big-O notation
+	a. Estimating Big-O
+	
