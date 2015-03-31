@@ -66,6 +66,7 @@ namespace CommonProblems.Algorithm.GraphBased
 			while (stack.Count > 0)
 			{
 				TreeNode n = stack.Pop();
+				Console.Write("visiting node Id: " + n.Id);
 				if (!visitedNodes.Contains(n))
 				{
 					visitedNodes.Add(n);

@@ -14,7 +14,8 @@ namespace CommonProblems.Algorithm.GraphBased
 			if (bt == null || (bt.LeftNode == null && bt.RightNode == null)) 
 				return null;
 
-			if (current != null && value <= current.NodeValue) return BinaryTreeSearchAlgo(bt.LeftNode, value);
+			if (current != null && value <= current.NodeValue) 
+				return BinaryTreeSearchAlgo(bt.LeftNode, value);
 
 			 
 			return BinaryTreeSearchAlgo(bt.RightNode, value);

@@ -102,7 +102,6 @@ namespace CommonProblems {
 		private static void SolveKnapSackProblem() {
 			Knapsack kn = new Knapsack();
 			Random r = new Random();
-
 			kn.SolveKnapsack(r.Next(20), r.Next(1000));
 		}
 

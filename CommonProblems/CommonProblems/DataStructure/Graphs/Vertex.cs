@@ -4,6 +4,13 @@ namespace CommonProblems.DataStructure.Graphs
 {
 	public class Vertex
 	{
+		public Vertex() { }
+		public Vertex(int id, string name, double value)
+		{
+			Id = id;
+			NodeName = name;
+			NodeValue = value;
+		}
 		protected bool Equals(Vertex other)
 		{
 			return Id == other.Id && string.Equals(NodeName, other.NodeName) 

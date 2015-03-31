@@ -66,6 +66,7 @@
   <ItemGroup>
     <Compile Include="Algorithm\BitManipulation\BitManipulating.cs" />
     <Compile Include="Algorithm\GraphBased\DirectedAcylicGraph.cs" />
+    <Compile Include="Algorithm\GraphBased\TreeTraverse.cs" />
     <Compile Include="Algorithm\Misc\DictionaryLookup.cs" />
     <Compile Include="Algorithm\Misc\ParabolicArrayTransform.cs" />
     <Compile Include="Algorithm\Recursion\BacktrackRecursion.cs" />
@@ -81,6 +82,7 @@
     <Compile Include="Algorithm\Searching\QuickSelectAlgo.cs" />
     <Compile Include="Algorithm\String\GetNearByWords.cs" />
     <Compile Include="Algorithm\String\StringReverse.cs" />
+    <Compile Include="DataStructure\Array\MultiDimensionArray.cs" />
     <Compile Include="DataStructure\Graphs\BinarySearchTree.cs" />
     <Compile Include="DataStructure\Graphs\BinarySearchTreeNode.cs" />
     <Compile Include="DataStructure\Graphs\DirectedGraph.cs" />
@@ -113,6 +115,8 @@
     <Compile Include="Algorithm\Sorting\StackAlgo.cs" />
     <Compile Include="Algorithm\String\StringRemoveDuplicateChar.cs" />
     <Compile Include="Algorithm\String\StringCanBuildWords.cs" />
+    <Compile Include="Tests\Algorithm\GraphBased\GraphTests.cs" />
+    <Compile Include="Tests\Algorithm\GraphBased\TreeTraverseTest.cs" />
     <Compile Include="Tests\Algorithm\Recursion\PermutationTests.cs" />
     <Compile Include="Tests\Algorithm\String\StringReverseTests.cs" />
     <Compile Include="Tests\BacktrackRecursionTest.cs" />
