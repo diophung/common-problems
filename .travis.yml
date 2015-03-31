@@ -1,4 +1,3 @@
 language: csharp
 solution: CommonProblems.sln
-mono: 
-	- latest
+mono: latest
