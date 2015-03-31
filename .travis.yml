@@ -1,3 +1,2 @@
 language: csharp
-solution: CommonProblems.sln
-mono: latest
+solution: ./CommonProblems/CommonProblems.sln
